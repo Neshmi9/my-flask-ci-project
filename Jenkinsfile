@@ -22,7 +22,7 @@ pipeline {
         stage('Dynamic Code Testing') {
             steps {
                 sh 'pip install pytest'
-                sh 'pytest'
+                sh 'export PATH=$PATH:~/.local/bin && pytest'
             }
         }
 
