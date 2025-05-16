@@ -49,11 +49,12 @@ pipeline {
     }
 
     post {
-        success {
-            echo '✅ Pipeline completed successfully'
-        }
-        failure {
-            echo '❌ Pipeline failed'
+        echo '✅ Pipeline completed successfully'
+        echo '📩 [Simulated] Sending success message to Slack...'
+    }
+    failure {
+        echo '❌ Pipeline failed'
+        echo '📩 [Simulated] Sending failure message to Slack...'
         }
     }
 }
