@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify
-import os
 import sqlite3
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return 'Hello from Flask CI/CD App!'
+
 
 @app.route('/add', methods=['POST'])
 def add_data():
@@ -17,6 +18,7 @@ def add_data():
     conn.commit()
     conn.close()
     return jsonify({'message': 'User added'}), 201
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
