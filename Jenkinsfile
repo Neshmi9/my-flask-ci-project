@@ -15,7 +15,7 @@ pipeline {
         stage('Static Code Testing') {
             steps {
                 sh 'pip install flake8'
-                sh 'flake8 app.py'
+                sh 'export PATH=$PATH:~/.local/bin && flake8 app.py'
             }
         }
 
